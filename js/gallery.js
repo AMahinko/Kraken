@@ -5,6 +5,8 @@ $(document).ready(function() {
   var imageUrlArray;
   var offsetValue = 0;
 
+
+
   $('.gallery-button').css('color', 'blue');
 
   function getPictures() {
@@ -28,16 +30,13 @@ $(document).ready(function() {
     }
     return urlArray;
   };
-
-  // console.log(imageObject);
-
   function generateGallery() {
 
     for (i=0; i<imageUrlArray.length; i++){
       // console.log(i)
       $('.row').append(
         '<div class="gallery-item col-lg-3">' +
-          '<img src=' + imageUrlArray[i] + ' alt muted loop class="image">'+
+          '<img src=' + imageUrlArray[i] + ' class="image">'+
         '</div>'
       )
 
@@ -59,12 +58,19 @@ $(document).ready(function() {
 
   populateGallery();
 
+
+  //ensuring that scrolling trigger works for certain tablets (scroll function wouldn't fire)
+  if (window.innerHeight >= $(document).height()) {
+
+    offsetValue += 12
+    populateGallery();
+
+  }
+
   function setImageClickFlag() {
 
     $('.image').click(function() {
-      var imgurl = $(this).attr('src')
-      console.log(imgurl);
-      console.log('clicked!');
+      var imgurl = $(this).attr('src');
       $('.dimmer').fadeIn(200);
       $('.close').show();
       $('.expanded-image').attr('src', imgurl);
