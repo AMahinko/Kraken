@@ -189,7 +189,9 @@ li a {
   display: none;
 }
 
-
+.avatar-mobile {
+  display: none;
+}
 
 
 @media (max-width: 700px) {
@@ -232,10 +234,9 @@ li a {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 40px;
+    top: 65px;
     left: 20px;
     transform: translateY(-50%);
-    margin-top: 25px
   }
 
 
@@ -270,10 +271,10 @@ li a {
 
 }
 
-@media (max-width: 1000px) {
+/*@media (max-width: 1000px) {
 
   .gallery-item {
     height: 157.5px;
   }
 
-}
+}*/

@@ -27,16 +27,16 @@
 
       <ul id='navlinks'>
         <li><a href="#">Logout</a></li>
-        <li><a href="/pages/gallery">Gallery</a></li>
+        <li><a href="/pages/gallery" class="gallery-button">Gallery</a></li>
         <li><a href="/pages/list">List Items</a></li>
 
       </ul>
       <ul id='mobile-navlinks'>
         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span></a></li>
-        <li><a href="/pages/gallery"><span class="glyphicon glyphicon-camera"></span></a></li>
+        <li><a href="/pages/gallery" class="gallery-button"><span class="glyphicon glyphicon-camera"></span></a></li>
         <li><a href="/pages/list"><span class="glyphicon glyphicon-list-alt"></span></a></li>
       </ul>
-      
+
       <div class="avatar-mobile">
         <p id='badge'>2</p>
       </div>

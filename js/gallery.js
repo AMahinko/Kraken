@@ -5,6 +5,8 @@ $(document).ready(function() {
   var imageUrlArray;
   var offsetValue = 0;
 
+  $('.gallery-button').css('color', 'blue');
+
   function getPictures() {
     var pictures = null;
     $.ajax({
