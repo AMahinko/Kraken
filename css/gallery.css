@@ -10,7 +10,7 @@
   height: 250px;
   width: 25%;
   overflow: hidden;
-  margin-bottom: 20px;
+  padding: 5px;
 }
 
 
@@ -20,7 +20,7 @@
   object-fit: cover;
   object-position: center;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .loader {
@@ -108,7 +108,7 @@
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   .gallery-item {
   width: 100%;
   }

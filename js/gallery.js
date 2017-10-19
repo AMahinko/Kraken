@@ -12,7 +12,7 @@ $(document).ready(function() {
   function getPictures() {
     var pictures = null;
     $.ajax({
-    url: "http://api.giphy.com/v1/gifs/search?q=audrey+hepburn&api_key=BKnZva5zcGuuBiO0BRi5qezWaMMRt1t3&limit=12&offset="+ offsetValue,
+    url: "https://api.giphy.com/v1/gifs/search?q=audrey+hepburn&api_key=BKnZva5zcGuuBiO0BRi5qezWaMMRt1t3&limit=12&offset="+ offsetValue,
     async: false,
     context: document.body
     }).done(function(response) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
     urlArray.push(imageObject[i]['images']['original_still']['url']);
     }
     return urlArray;
-  };
+  }
   
   function generateGallery() {
 
@@ -56,17 +56,17 @@ $(document).ready(function() {
   setTimeout(function () {
     $('.loader').css('display', 'none');
   }, 20000);
-};
+}
 
   populateGallery();
 
 
   //auto-loads another batch of images if scrolling is impossible
-  if (window.innerHeight >= $(document).height()) {
-    offsetValue += 12
-    populateGallery();
-
-  }
+  if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
+     offsetValue = offsetValue + 12;
+     populateGallery();
+     console.log(offsetValue);
+}
 
 //sets click event handler on newly generated images
   function setImageClickFlag() {
@@ -96,6 +96,8 @@ $(document).ready(function() {
    }
 });
 
+
+//Intial load
 
 
 });

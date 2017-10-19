@@ -1,19 +1,18 @@
 <?php
-class Pages extends Controller
+class Pages
 {
 
   public function gallery()
   {
-    include_once './app/views/gallery/gallery.html.php';
+    include_once realpath($_SERVER["DOCUMENT_ROOT"]) . '/app/views/gallery/gallery.html.php';
   }
 
   public function list()
   {
-    // $this->model = new Content('panelPageContent');
-    $json = file_get_contents('./app/panelPageContent.json');
+    realpath($_SERVER["DOCUMENT_ROOT"]);
+    $json = file_get_contents(realpath($_SERVER["DOCUMENT_ROOT"]) . '/app/panelPageContent.json');
     $contentsArray = json_decode($json, true);
-    include_once './app/views/list/list.html.php';
-    // echo $content;
+    include_once realpath($_SERVER["DOCUMENT_ROOT"]) . '/app/views/list/list.html.php';
   }
 
 
