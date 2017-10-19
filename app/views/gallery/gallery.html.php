@@ -1,5 +1,6 @@
 <?php
 require_once './app/views/app/app.html.php'; ?>
+<link rel="stylesheet" href="/css/gallery.css">
 <div class="dimmer">
   <div class="image-container">
     <img src="" class='expanded-image'>

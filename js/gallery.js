@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 
 
-  $('.gallery-button').css('color', 'blue');
+  $('.gallery-button').css('color', '#527297');
 
   function getPictures() {
     var pictures = null;
@@ -30,6 +30,7 @@ $(document).ready(function() {
     }
     return urlArray;
   };
+  
   function generateGallery() {
 
     for (i=0; i<imageUrlArray.length; i++){
@@ -41,10 +42,11 @@ $(document).ready(function() {
       )
 
 
-      // console.log(i);
+
     }
   }
 
+//primary generator function
   function populateGallery() {
   $('.loader').css('display','block');
   imageObject = getPictures();
@@ -59,14 +61,14 @@ $(document).ready(function() {
   populateGallery();
 
 
-  //ensuring that scrolling trigger works for certain tablets (scroll function wouldn't fire)
+  //auto-loads another batch of images if scrolling is impossible
   if (window.innerHeight >= $(document).height()) {
-
     offsetValue += 12
     populateGallery();
 
   }
 
+//sets click event handler on newly generated images
   function setImageClickFlag() {
 
     $('.image').click(function() {
@@ -85,11 +87,7 @@ $(document).ready(function() {
   }
 
 
-
-
-
-
-
+//Generates new images at end of page
   $(window).scroll(function () {
    if ($(window).scrollTop() >= $(document).height() - $(window).height() - 15) {
      offsetValue = offsetValue + 12;
